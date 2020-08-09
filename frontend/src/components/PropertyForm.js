@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Form, Image } from 'react-bootstrap'
+import Switch from "react-switch";
 
 import AddressImage from "../images/address.svg"
 import DateImage from "../images/date.svg"
@@ -14,7 +15,10 @@ import PhoneImage from "../images/phone.svg"
 import LocationImage from "../images/location.png"
 import BusImage from "../images/bus.svg"
 import BasementImage from "../images/basement.svg"
-
+import PencilImage from "../images/pencil.png"
+import DogImage from "../images/dog.png"
+import ElevatorImage from "../images/elevator.png"
+import WheelchairImage from "../images/wheelchair.png"
 
 const PropertyForm = ({ showModal, setShowModal }) => {
   return (
@@ -89,10 +93,64 @@ const PropertyForm = ({ showModal, setShowModal }) => {
         <Form.Group controlId="propertyForm.landlord">
           <Form.Label>
             <Image src={HouseImage} className="mr-2" />Landlord</Form.Label>
-          <Form.Control type="text" placeholder="Example Landlord<" />
+          <Form.Control type="text" placeholder="Example Landlord" />
         </Form.Group>
-        <Form.Label>Test Label</Form.Label>
-        <Form.Check
+        
+        <div>
+        <Form.Label>
+          <Image src={BusImage} className="mr-2" /></Form.Label>
+          <label>
+            <span>Bus Nearby</span>
+            <Switch/>
+          </label>
+        </div>
+
+        <div>
+        <Form.Label>
+          <Image src={BasementImage} className="mr-2" /></Form.Label>
+          <label>
+            <span>Basement</span>
+            <Switch/>
+          </label>
+        </div>
+
+        <div>
+        <Form.Label>
+          <Image src={WheelchairImage} className="mr-2" /></Form.Label>
+          <label>
+            <span>Wheelchair Accessible</span>
+            <Switch/>
+          </label>
+        </div>
+
+        <div>
+        <Form.Label>
+          <Image src={PencilImage} className="mr-2" /></Form.Label>
+          <label>
+            <span>No Background Check</span>
+            <Switch/>
+          </label>
+        </div>
+
+        <div>
+        <Form.Label>
+          <Image src={DogImage} className="mr-2" /></Form.Label>
+          <label>
+            <span>Pets Allowed</span>
+            <Switch/>
+          </label>
+        </div>
+
+        <div>
+        <Form.Label>
+          <Image src={ElevatorImage} className="mr-2" /></Form.Label>
+          <label>
+            <span>Elevator</span>
+            <Switch/>
+          </label>
+        </div>
+
+        {/* <Form.Check
           className="mt-2 mb-2"
           type="switch"
           id="bus-switch"
@@ -128,7 +186,7 @@ const PropertyForm = ({ showModal, setShowModal }) => {
           type="switch"
           id="elevator-switch"
           label="Elevator"
-        />
+        /> */}
         <Form.Group className="mt-4" controlId="exampleForm.ControlTextarea1">
           <Form.Label className="mb-2">
             <Image src={AddressImage} className="mr-2" />Additional Notes</Form.Label>
