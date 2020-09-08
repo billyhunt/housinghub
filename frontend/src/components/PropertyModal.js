@@ -1,14 +1,15 @@
 import React from "react";
 import { Modal, Button } from 'react-bootstrap'
 import PropertyForm from './PropertyForm'
-import { postProperty } from '../api/property'
+import { addProperty } from "../actions/property";
+import { searchProperties } from "../actions/search";
 
 
-const addProperty = (formValues, setFormValues, setShowModal) => {
-  postProperty(formValues)
-  setFormValues({})
-  setShowModal(false)
-}
+const addPropertyAndClose = (setShowModal) => {
+  addProperty();
+  setShowModal(false);
+  searchProperties();
+};
 
 const PropertyModal = ({ showModal, setShowModal, formValues, setFormValues }) => {
 
@@ -25,7 +26,7 @@ const PropertyModal = ({ showModal, setShowModal, formValues, setFormValues }) =
           <Button variant="primary" onClick={() => setShowModal(false)}>
             Cancel
           </Button>
-          <Button variant="success" onClick={() => addProperty(formValues, setFormValues, setShowModal)}>
+          <Button variant="success" onClick={() => addPropertyAndClose(setShowModal)}>
             Save
           </Button>
         </Modal.Footer>

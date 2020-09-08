@@ -1,5 +1,7 @@
 import React from "react";
+import {connect} from "react-redux";
 import { Form, Image } from 'react-bootstrap'
+import { setAddPropertyField } from "../actions/property";
 import {
   HouseImage,
   AddressImage,
@@ -12,15 +14,14 @@ import {
   PhoneImage
 } from "../images"
 
-
-const PropertyForm = ({ formValues, setFormValues }) => {
+const PropertyForm = (props) => {
 
   const handleChange = e => {
-    let localFormValues = formValues
-    localFormValues[e.target.id] = e.target.type === "checkbox" ? e.target.checked : e.target.value
-    setFormValues(localFormValues)
-    console.log(formValues)
-  }
+    const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    props.dispatch(
+      setAddPropertyField(e.target.id, value)
+    );
+  };
 
   return (
     <>
@@ -28,7 +29,7 @@ const PropertyForm = ({ formValues, setFormValues }) => {
         <Form.Group controlId="property_name">
           <Form.Label>
             <Image src={HouseImage} className="mr-2" />Property Name</Form.Label>
-          <Form.Control type="text" placeholder="Property Name" />
+          <Form.Control type="text" placeholder="Property Name" onChange={handleChange} />
         </Form.Group>
         <Form.Group controlId="address">
           <Form.Label>
@@ -144,4 +145,12 @@ const PropertyForm = ({ formValues, setFormValues }) => {
   );
 };
 
-export default PropertyForm
+function mapStateToProps(state) {
+  return {
+    addProperty: {
+      fields: state.propertyState.addProperty.fields,
+    },
+  };
+}
+
+export default connect(mapStateToProps)(PropertyForm);

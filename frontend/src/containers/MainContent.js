@@ -11,7 +11,6 @@ const MainContent = (props) => {
     <div className="main-content">
       <Navbar />
       <Switch>
-        <Route path={"/property/new"} component={NewPropForm} />
         <Route component={SearchProperty} />
       </Switch>
     </div>

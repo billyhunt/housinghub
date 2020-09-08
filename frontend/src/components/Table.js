@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "../style/App.css";
 import { Table, Button } from "react-bootstrap";
 const LocalTable = (props) => {
+  const [isStudySpots, setIsStudySpots] = useState('true');
 
   let _renderCell = (value, rowIndex, columnIndex) => {
     let key = `$cell-{rowIndex}-${columnIndex}-${value}`;
@@ -11,13 +12,13 @@ const LocalTable = (props) => {
   let _renderRow = (r, rowIndex) => (
     <tr
       className={props.selectedRowIndex === rowIndex ? "is-selected" : ""}
-      onClick={() => props.onRowSelect && props.onRowSelect(r, rowIndex)}
+      onClick={() => setIsStudySpots(!isStudySpots)}
       key={`row-${rowIndex}`}
     >
       {props.columns.map((c, columnIndex) =>
         _renderCell(r[c.field], rowIndex, columnIndex)
       )}
-      <Button>Delete</Button>
+      <a>Delete</a>
     </tr>
   );
 
@@ -32,7 +33,8 @@ const LocalTable = (props) => {
       <thead className="bg-info text-white">
         <tr>
           <TableHead columns={props.columns} />
-          <th >Delete</th>
+          {isTab === 'study' ? <th>Delete</th> : <th>Study Spots</th>}
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>{props.rows.map((r, i) => _renderRow(r, i))}</tbody>

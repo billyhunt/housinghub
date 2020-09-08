@@ -21,6 +21,10 @@ export default function SearchTable(props) {
           ""
         )}
       <div className="border mb-4">
+        <Row className="m-1">
+        <Col sm={10} />
+        <Col><Button onClick={() => setShowModal(true)}>Add Property</Button>
+        </Col></Row>
         <Table
           columns={props.columns}
           rows={props.rows}
@@ -35,7 +39,7 @@ export default function SearchTable(props) {
           }}
         />
       </div>
-      <Row className="text-center pagination ml-3">
+      <Row className="text-center ml-3">
         <Col sm={1} />
         <Col sm={9}>
           <Pagination
@@ -55,7 +59,6 @@ export default function SearchTable(props) {
           />
         </Col>
         <Col sm={2}>
-          <Button className="justify-end" onClick={() => setShowModal(true)}>Add Property</Button>
         </Col>
       </Row>
     </>
