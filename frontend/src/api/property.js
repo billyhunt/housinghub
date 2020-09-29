@@ -5,7 +5,7 @@ import apiEndpoint from "./endpoint";
  * makes POST request to /backend/property with property
  **/
 
-export function postProperty(property) {
+export function addProperty(property) {
   return axios
     .post(`${apiEndpoint}/property`, property)
     .then((r) => {
@@ -15,3 +15,7 @@ export function postProperty(property) {
       return Promise.resolve(err.response.data);
     });
 }
+
+export function updateProperty(propertyId, property)
+
+export function deleteProperty(propertyId)

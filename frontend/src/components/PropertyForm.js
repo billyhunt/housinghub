@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Image } from 'react-bootstrap'
+import { Form, Image } from "react-bootstrap";
 import {
   HouseImage,
   AddressImage,
@@ -9,9 +9,8 @@ import {
   SchoolImage,
   TicketImage,
   PersonImage,
-  PhoneImage
-} from "../images"
-
+  PhoneImage,
+} from "../images";
 
 const PropertyForm = ({ showModal, setShowModal }) => {
   return (
@@ -19,17 +18,23 @@ const PropertyForm = ({ showModal, setShowModal }) => {
       <Form>
         <Form.Group controlId="propertyForm.propertyName">
           <Form.Label>
-            <Image src={HouseImage} className="mr-2" />Property Name</Form.Label>
+            <Image src={HouseImage} className="mr-2" />
+            Property Name
+          </Form.Label>
           <Form.Control type="text" placeholder="Example Property Name" />
         </Form.Group>
         <Form.Group controlId="propertyForm.address">
           <Form.Label>
-            <Image src={AddressImage} className="mr-2" />Address</Form.Label>
+            <Image src={AddressImage} className="mr-2" />
+            Address
+          </Form.Label>
           <Form.Control type="text" placeholder="Example Address" />
         </Form.Group>
         <Form.Group controlId="exampleForm.housingType">
           <Form.Label>
-            <Image src={HouseImage} className="mr-2" />Housing Type</Form.Label>
+            <Image src={HouseImage} className="mr-2" />
+            Housing Type
+          </Form.Label>
           <Form.Control as="select">
             <option>Apartment</option>
             <option>Shared House</option>
@@ -40,32 +45,44 @@ const PropertyForm = ({ showModal, setShowModal }) => {
         </Form.Group>
         <Form.Group controlId="propertyForm.rent">
           <Form.Label>
-            <Image src={DollarsignImage} className="mr-2" />Rent</Form.Label>
+            <Image src={DollarsignImage} className="mr-2" />
+            Rent
+          </Form.Label>
           <Form.Control type="text" placeholder="placeholder" />
         </Form.Group>
         <Form.Group controlId="propertyForm.bedrooms">
           <Form.Label>
-            <Image src={BedImage} className="mr-2" />Bedrooms</Form.Label>
+            <Image src={BedImage} className="mr-2" />
+            Bedrooms
+          </Form.Label>
           <Form.Control type="number" placeholder="1" />
         </Form.Group>
         <Form.Group controlId="propertyForm.bathrooms">
           <Form.Label>
-            <Image src={BathImage} className="mr-2" />Bathrooms</Form.Label>
+            <Image src={BathImage} className="mr-2" />
+            Bathrooms
+          </Form.Label>
           <Form.Control type="number" placeholder="1" />
         </Form.Group>
         <Form.Group controlId="propertyForm.sharedBathrooms">
           <Form.Label>
-            <Image src={BathImage} className="mr-2" />Shared Bathrooms</Form.Label>
+            <Image src={BathImage} className="mr-2" />
+            Shared Bathrooms
+          </Form.Label>
           <Form.Control type="number" placeholder="0" />
         </Form.Group>
         <Form.Group controlId="propertyForm.location">
           <Form.Label>
-            <Image src={SchoolImage} className="mr-2" />Location</Form.Label>
+            <Image src={SchoolImage} className="mr-2" />
+            Location
+          </Form.Label>
           <Form.Control type="text" placeholder="Charlottesville" />
         </Form.Group>
         <Form.Group controlId="exampleForm.vouchers">
           <Form.Label>
-            <Image src={TicketImage} className="mr-2" />Vouchers Accepted</Form.Label>
+            <Image src={TicketImage} className="mr-2" />
+            Vouchers Accepted
+          </Form.Label>
           <Form.Control as="select">
             <option>None</option>
             <option>Type 1</option>
@@ -75,17 +92,23 @@ const PropertyForm = ({ showModal, setShowModal }) => {
         </Form.Group>
         <Form.Group controlId="propertyForm.propertyContact">
           <Form.Label>
-            <Image src={PersonImage} className="mr-2" />Property Contact</Form.Label>
+            <Image src={PersonImage} className="mr-2" />
+            Property Contact
+          </Form.Label>
           <Form.Control type="text" placeholder="Example Property Contact" />
         </Form.Group>
         <Form.Group controlId="propertyForm.contactPhoneNumber">
           <Form.Label>
-            <Image src={PhoneImage} className="mr-2" />Contact Phone Number</Form.Label>
+            <Image src={PhoneImage} className="mr-2" />
+            Contact Phone Number
+          </Form.Label>
           <Form.Control type="text" placeholder="Example Phone Number" />
         </Form.Group>
         <Form.Group controlId="propertyForm.landlord">
           <Form.Label>
-            <Image src={HouseImage} className="mr-2" />Landlord</Form.Label>
+            <Image src={HouseImage} className="mr-2" />
+            Landlord
+          </Form.Label>
           <Form.Control type="text" placeholder="Example Landlord<" />
         </Form.Group>
         <Form.Label>Test Label</Form.Label>
@@ -97,7 +120,6 @@ const PropertyForm = ({ showModal, setShowModal }) => {
         />
         <Form.Check
           className="mt-2 mb-2"
-
           type="switch"
           id="basement-switch"
           label="Basement"
@@ -128,7 +150,9 @@ const PropertyForm = ({ showModal, setShowModal }) => {
         />
         <Form.Group className="mt-4" controlId="exampleForm.ControlTextarea1">
           <Form.Label className="mb-2">
-            <Image src={AddressImage} className="mr-2" />Additional Notes</Form.Label>
+            <Image src={AddressImage} className="mr-2" />
+            Additional Notes
+          </Form.Label>
           <Form.Control as="textarea" rows="3" />
         </Form.Group>
       </Form>
@@ -136,4 +160,4 @@ const PropertyForm = ({ showModal, setShowModal }) => {
   );
 };
 
-export default PropertyForm
+export default PropertyForm;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../style/App.css";
 import { Table } from "react-bootstrap";
 const LocalTable = (props) => {
@@ -31,19 +31,18 @@ const LocalTable = (props) => {
       )}
     </tr>
   );
-
   return (
     <Table hover>
       <thead className="bg-info text-white">
         <tr>
-          {props.columns.map(({ field, title }, index) => {
+          {props.columns.map(({ title }, index) => {
             return <th key={index}>{title}</th>;
           })}
         </tr>
       </thead>
       <tbody>{props.rows.map((r, i) => _renderRow(r, i))}</tbody>
     </Table>
-  );
+  ); 
 };
 
 export default LocalTable;

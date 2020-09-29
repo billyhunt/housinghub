@@ -19,4 +19,4 @@ RUN npm install --save-dev serverless-wsgi
 # install python dependencies
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.txt
 
-CMD /bin/sh docker_start.sh
+CMD /bin/sh ./docker_start.sh
